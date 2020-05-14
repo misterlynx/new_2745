@@ -1,5 +1,6 @@
-# FuturTransmission
-{: .FuturTransmission-antiquewhite .text-center}
+<h1 align="center">
+FuturTransmission
+</h1>
 
 ## Site Perso, FuturTransmission est un Wiki du monde Tech, donnant accès à des articles rédigés par la communauté, pour la communauté.
 
