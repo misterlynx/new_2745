@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+	<a class="navbar-brand text-info" href="{{path('accueil')}}">Trans'mission</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav text-info m-auto">
+			<li class="nav-item active">
+				<a class="nav-link" href="{{ path('accueil') }}">{% trans %}Home{% endtrans %}
+					<span class="sr-only">(current)</span>
+				</a>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					{% trans %}Articles{% endtrans %}
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="{{path('articles')}}">{% trans %}See all Articles{% endtrans %}</a>
+					<a class="dropdown-item" href="{{path('articles')}}">{% trans %}See all Category{% endtrans %}</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="{{path('add_article')}}">{% trans %}Add a new article{% endtrans %}</a>
+				</div>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{{ path('amis') }}">{% trans %}Other websites{% endtrans %}</a>
+			</li>
+		</ul>
+		<ul class="navbar-nav">
+			{% if is_granted('ROLE_USER') %}
+				<li class="nav-item ml-auto pr-3">
+					<a class="nav-link" href="#">{% trans %}Profile{% endtrans %}</a>
+				</li>
+				<li class="nav-item ml-auto pr-3">
+					<a class="btn btn-outline-info" href="{{path('app_logout')}}">{% trans %}Logout{% endtrans %}</a>
+				{% else %}
+					<a class="btn btn-outline-info" href="{{path('app_login')}}">{% trans %}Login{% endtrans %}</a>
+				</li>
+
+				{# {% if is_granted('ROLE_ADMIN') %}
+							<li class="nav-item">
+								<a href="{{ path('admin') }}" class="nav-link">Admin</a>
+							</li>
+						{% endif %}	 #}
+			</ul>
+			<ul class="navbar-nav">
+				<li class="nav-item px-2">
+					<a class="btn btn-outline-primary" href="{{ path('app_register') }}">{% trans %}Register{% endtrans %}</a>
+				</li>
+			</ul>
+		{% endif %}
+		<ul class="navbar-nav text-info ml-auto">
+		
+			<ul class="navbar-nav ml-auto">
+			{% for locale in locales %}
+			{% if locale != app.request.locale %}
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('change_locale', {'locale': locale}) }}"><img src="{{ asset('img/'~locale~'.png') }}" alt="{{locale}}"></a>
+				</li>
+			{% endif %}	
+			{% endfor %}	
+			</ul>
+			<li class="nav-item">
+				<a class="nav-link" href="{{ path('amis') }}"></a>
+			</li>
+		</ul>
+	</div>
+</nav>
+{# {{dump(locales) }} #}

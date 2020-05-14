@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un article
+{% endblock %}
+
+{% block body %}
+	<h2 class="text-center text-info">Ajouter un article</h2>
+	<div class="jumbotron jumbotron-fluid">
+		<div class="container">
+			{{ form_start(articleForm) }}
+			<div class="row">
+				<div class="col pb-3 text-center">
+					votre {{ form_label(articleForm.title) }}<br>
+					{{ form_widget(articleForm.title) }}
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					{{ form_widget(articleForm.content) }}
+				</div>
+			</div>
+			<div class="row pt-3">
+				<div class="col">
+					{{ form_widget(articleForm.featured_image) }}
+				</div>
+				<div class="col">
+					
+				</div>
+			</div>
+			<div class="row pt-3">
+				<div class="col-6">
+					<button class="btn btn-outline-info" type="submit">Publier</button>
+				</div>
+			</div>
+			{{ form_end(articleForm) }}
+		</div>
+	</div>
+
+
+{% endblock %}

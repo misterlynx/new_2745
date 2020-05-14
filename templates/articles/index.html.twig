@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articles{% endblock %}
+
+{% block body %}
+    <section class="container">
+        <a href="{{ path('add_article') }}" class="btn btn-success">{% trans %}Add Article{% endtrans %}</a>
+        <div class="row my-3"> 
+            <div class=" col py-2"> 
+                <div class=" bg-dark text-info" style="width: 18rem;">
+                {% for article in articles %}
+                    <img src="{{ vich_uploader_asset(article, 'imageFile')|imagine_filter('carre') }}" class="card-img-top" alt="{{article.title}}">
+                    <div class="">
+                        <h5 class="">{{article.title}}</h5>
+                        <p>{% trans %}Published on {% endtrans %} : {{article.createdAt|date('d/m/Y')}}</p>
+                        <p>{% trans %}in categorys{% endtrans %} : {% for category in article.categorys %}
+                            {{category.name}}
+                        {% endfor %} </p>
+                        <p >{{article.content|slice(0, 150)}}...</p>
+                        <a href="{{ path('article', {"slug": article.slug}) }}" class="btn btn-outline-info">{% trans %}See the Article{% endtrans %}</a>
+                    </div>
+                {% endfor %}    
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

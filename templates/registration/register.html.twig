@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register now!{% endblock %}
+
+{% block body %}
+    <h2 class="text-center">s'enregistrer</h2>
+    <section class="container">
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col">
+                {{ form_start(registrationForm) }}
+                    <div class="row">   
+                        <div class="col">
+                        {{form_label(registrationForm.username)}}
+                        <i class="fa fa-user"></i>
+                            <div class="col mb-3">
+                                {{form_widget(registrationForm.username)}}
+                                <div class="form-error">
+                                    {{form_errors(registrationForm.username)}}
+                                </div>
+                            </div> 
+                        </div>
+                    </div> 
+                    <div class="row"> 
+                        <div class="col">
+                        {{form_label(registrationForm.password)}}
+                        <i class="fa fa-lock"></i>
+                            <div class="col mb-3">
+                                {{form_widget(registrationForm.password)}}
+                                <div class="form-error">
+                                    {{form_errors(registrationForm.password)}}
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="row"> 
+                        <div class="col">
+                        {{form_label(registrationForm.email)}}
+                        <i class="fa fa-envelope"></i>
+                            <div class="col mb-3">
+                                {{form_widget(registrationForm.email)}}
+                                <div class="form-error">
+                                    {{form_errors(registrationForm.email)}}
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-4 mb-3">
+                            {{ form_label(registrationForm.agreeTerms) }}
+                            {{ form_widget(registrationForm.agreeTerms) }} 
+                            {{ form_errors(registrationForm.agreeTerms) }}
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-outline-info">S'enregistrer</button>
+                        </div>   
+                    {{ form_end(registrationForm) }}    
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="jumbotron bg-secondary text-info">
+                        <h4>Vous pouvez ajouter un avatar</h4>
+                        {{ form_start(formUpload) }}
+                            <div class="row mt-5">
+                                <div class="col">
+                                {{form_widget(formUpload.name)}}
+                                </div>
+                            </div>   
+                            <div class="row text-center m-5"> 
+                                <div class="col">
+                                    <button class="btn btn-outline-info">Enregistrer</button>
+                                </div> 
+                            </div>
+                        {{ form_end(formUpload) }}
+                    </div>
+                </div>
+            </div> 
+        </div> 
+    </section>
+{% endblock %}

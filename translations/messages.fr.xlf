@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="2lTOrMA" resname="Article published successfully">
+        <source>Article published successfully</source>
+        <target>Article publié avec succès</target>
+      </trans-unit>
+      <trans-unit id="NV958p1" resname="Comments">
+        <source>Comments</source>
+        <target>Commentaires</target>
+      </trans-unit>
+      <trans-unit id="Nubvqtr" resname="There's no comment yet">
+        <source>There's no comment yet</source>
+        <target>Il n'y a pas encore de commentaire</target>
+      </trans-unit>
+      <trans-unit id="0iUhajp" resname="Published by">
+        <source>Published by</source>
+        <target>Publié par</target>
+      </trans-unit>
+      <trans-unit id="nYJcIfB" resname="Articles list">
+        <source>Articles list</source>
+        <target>Liste des articles</target>
+      </trans-unit>
+      <trans-unit id="OnhpU4i" resname="Home">
+        <source>Home</source>
+        <target>Accueil</target>
+      </trans-unit>
+      <trans-unit id="sUrHikb" resname="Articles">
+        <source>Articles</source>
+        <target>Articles</target>
+      </trans-unit>
+      <trans-unit id="m4P385H" resname="See all Articles">
+        <source>See all Articles</source>
+        <target>Voir tous les Articles</target>
+      </trans-unit>
+      <trans-unit id="xbrINRG" resname="See all Category">
+        <source>See all Category</source>
+        <target>Voir toutes les Catégories</target>
+      </trans-unit>
+      <trans-unit id="0kGF5em" resname="Add a new article">
+        <source>Add a new article</source>
+        <target>Ajouter un nouvel article</target>
+      </trans-unit>
+      <trans-unit id="6a8SI9_" resname="Other websites">
+        <source>Other websites</source>
+        <target>Autres sites web</target>
+      </trans-unit>
+      <trans-unit id="1pajW90" resname="Profile">
+        <source>Profile</source>
+        <target>Profil</target>
+      </trans-unit>
+      <trans-unit id="0FJ_Sz1" resname="Logout">
+        <source>Logout</source>
+        <target>Déconnexion</target>
+      </trans-unit>
+      <trans-unit id="nWMiwfT" resname="Login">
+        <source>Login</source>
+        <target>Connexion</target>
+      </trans-unit>
+      <trans-unit id="u3I07BJ" resname="Register">
+        <source>Register</source>
+        <target>Inscription</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

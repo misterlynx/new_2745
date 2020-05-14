@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{article.title}}{% endblock %}
+
+{% block body %}
+<section class="container-fluid"> 
+    {# {{dump(article)}} #}
+    <article class="container border border-rounded border-info py-3">
+        <div class="row">
+            <div class="col text-center">
+                <img src="{{asset('img/rouage.gif') }}" alt="image de l'article">
+            </div>
+        </div>
+        <h2 class="text-center">{{article.title}}</h2>
+        <div class="row">
+            <div class="col">
+                <p>{{article.content|raw}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-right">
+                <p>{% trans %}Published on{% endtrans %} : {{article.createdAt|date('d/m/Y')}} </p>
+            </div>
+        </div>
+        <div class="commentaire border border-rounded">
+            <a href="#" class="btn btn-outline-info ml-2 mt-2">Add a comment</a>
+            <h2 class="text-center">{% trans %}comments{% endtrans %}
+                {{article.comments|length}}:</h2>
+            {% for comment in article.comments %}
+                <p>{{comment.username}}</p>{% trans %}a dit le{% endtrans %} : {{comment.createdAt|date('d/m/Y')}}
+                <div class="row">
+                    <div class="col border border rounded">
+                        {{comment.content}}
+                    </div>
+                </div> 
+            {% endfor %} 
+        </div>  
+    </article>
+</section>
+
+{% endblock %}
