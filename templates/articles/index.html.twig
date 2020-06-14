@@ -7,7 +7,7 @@
         <a href="{{ path('add_article') }}" class="btn btn-success">{% trans %}Add Article{% endtrans %}</a>
         <div class="row my-3"> 
             <div class=" col py-2"> 
-                <div class=" bg-dark text-info" style="width: 18rem;">
+                <div class="bg-dark text-info" style="width: 18rem;">
                 {% for article in articles %}
                     <img src="{{ vich_uploader_asset(article, 'imageFile')|imagine_filter('carre') }}" class="card-img-top" alt="{{article.title}}">
                     <div class="">
